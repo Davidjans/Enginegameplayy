@@ -87,7 +87,7 @@ public class PlayerManager : MonoBehaviour
 
 	public void RecieveCredits(float creditAmmount)
 	{
-		m_Credits += Mathf.RoundToInt(creditAmmount);
+		m_Credits += Mathf.RoundToInt(creditAmmount * m_Difficulty);
 	}
 }
 

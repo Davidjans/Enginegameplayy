@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MatchManager : MonoBehaviour
 {
 	public int m_EnemyAmmount;
 	public int m_CurrentWave;
+	[SerializeField] private TextMeshProUGUI m_CurrentWaveText;
+	[SerializeField] private TextMeshProUGUI m_EnemyAmmountText;
+	[SerializeField] private TextMeshProUGUI m_CreditsText;
 	[SerializeField] private List<GameObject> m_AragonPrefabs;
 	[SerializeField] private List<GameObject> m_PenetratorPrefabs;
 	[SerializeField] private List<GameObject> m_SwiftyPrefabs;
@@ -33,5 +37,12 @@ public class MatchManager : MonoBehaviour
 		{
 			Instantiate(m_PancakeorPrefabs[m_PlayerManager.m_ShipColour], transform.position, transform.rotation);
 		}
+	}
+
+	private void Update()
+	{
+		m_CurrentWaveText.text = m_CurrentWave.ToString();
+		m_EnemyAmmountText.text = m_EnemyAmmount.ToString();
+		m_CreditsText.text = m_PlayerManager.m_Credits.ToString();
 	}
 }

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1038905936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038905937}
+  m_Layer: 0
+  m_Name: Origin (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038905937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038905936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.428, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8912898314851986173}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8912898314851986171
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,8 +43,9 @@ GameObject:
   - component: {fileID: 8912898314851986144}
   - component: {fileID: 8912898314851986175}
   - component: {fileID: 8912898314851986174}
+  - component: {fileID: 8912898312880465314}
   m_Layer: 0
-  m_Name: AragonBlue 1
+  m_Name: AragonGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +61,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3, y: 0.3, z: 0}
   m_LocalScale: {x: 1.3673, y: 1.3673, z: 1.3673}
-  m_Children: []
+  m_Children:
+  - {fileID: 1038905937}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,9 +173,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bf96f3143af754eadc5477f957403d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 10
+  m_Speed: 300
   m_AddforceMovement: 1
   m_MaxPositions: {x: 10, y: 7}
   m_MinPositions: {x: -10.5, y: -5}
   m_MaxVelocity: 10
   m_MinVelocity: -10
+--- !u!114 &8912898312880465314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912898314851986171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28189030dae6134bacb4406eca85e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OriginalReloadTimer: 1
+  m_BulletPrefabs:
+  - {fileID: 5949560437099988362, guid: 80817217d17f52f4eb5201c8740d177b, type: 3}
+  - {fileID: 3912709827525739621, guid: 53e8fabd5d605e341b9ebe71ad7b59a7, type: 3}
+  - {fileID: 8749872196358698727, guid: 39d27d6a6dc472b49a3ef1dfc74f4b10, type: 3}
+  m_Origin: {fileID: 1038905937}
+  m_BulletSpeed: 100
+  m_CurrentReloadTimer: 0
