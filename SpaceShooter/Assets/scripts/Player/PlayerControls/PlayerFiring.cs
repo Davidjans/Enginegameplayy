@@ -8,14 +8,17 @@ public class PlayerFiring : MonoBehaviour
 	[SerializeField] private List<GameObject> m_BulletPrefabs;
 	[SerializeField] private Transform m_Origin;
 	[SerializeField] private float m_BulletSpeed;
+	[SerializeField] private float m_Damage;
 
 	private PlayerManager m_PlayerManager;
 	public float m_CurrentReloadTimer;
     // Start is called before the first frame update
     void Start()
     {
-		m_CurrentReloadTimer = m_OriginalReloadTimer;
 		m_PlayerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+		m_OriginalReloadTimer -= (m_PlayerManager.m_UpgradeLevels[0] * 0.025f);
+		m_CurrentReloadTimer = m_OriginalReloadTimer;
+		
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class PlayerFiring : MonoBehaviour
 					bullet = Instantiate(m_BulletPrefabs[0], m_Origin.position, m_Origin.rotation);
 				}
 				bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * m_BulletSpeed, ForceMode2D.Impulse);
+				bullet.GetComponent<Bullet>().m_Damage = m_Damage * (m_PlayerManager.m_UpgradeLevels[1] * (m_Damage * 0.5f));
 				m_CurrentReloadTimer = m_OriginalReloadTimer;
 			}
 		}

@@ -16,15 +16,24 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		m_PlayerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
 		m_MaxHealth = m_MaxHealth * m_PlayerManager.m_UpgradeLevels[4];
 		m_CurrentHealth = m_MaxHealth;
 		m_HealthDisplay = GameObject.Find("CurrentHealth").GetComponent<TextMeshProUGUI>();
+		UpdateHealth();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			TakeDamage(99999999);
+		}
+		if (Input.GetKeyDown(KeyCode.M))
+		{
+			m_PlayerManager.m_Credits += 9999;
+		}
 	}
 
 	public void TakeDamage(float damage)

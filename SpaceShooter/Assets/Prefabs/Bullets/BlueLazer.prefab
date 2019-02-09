@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6097912564444516448}
   - component: {fileID: 8506178418858928538}
   - component: {fileID: 1820266028615285079}
-  m_Layer: 0
+  - component: {fileID: 309700933}
+  m_Layer: 11
   m_Name: BlueLazer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,3 +129,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.37}
   m_EdgeRadius: 0
+--- !u!114 &309700933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5949560437099988362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd323810d47897142b15570e0f5b29d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 5

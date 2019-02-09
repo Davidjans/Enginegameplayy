@@ -11,9 +11,15 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float m_MaxVelocity;
 	[SerializeField] private float m_MinVelocity;
 	private Rigidbody2D m_RigidBody;
+	private PlayerManager m_PlayerManager;
 	// Start is called before the first frame update
 	void Start()
 	{
+		m_PlayerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+		if(m_PlayerManager.m_UpgradeLevels[3] > 1)
+		{
+			m_Speed = m_Speed + (m_PlayerManager.m_UpgradeLevels[3] * 50);
+		}
 		m_RigidBody = GetComponent<Rigidbody2D>();
 	}
 

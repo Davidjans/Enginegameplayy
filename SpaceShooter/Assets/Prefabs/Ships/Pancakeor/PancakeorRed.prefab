@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 561019921}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Origin (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 8912898314851986175}
   - component: {fileID: 8912898314851986174}
   - component: {fileID: 8912898313732488181}
-  m_Layer: 0
+  - component: {fileID: 1121833233}
+  m_Layer: 10
   m_Name: PancakeorRed
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,5 +198,19 @@ MonoBehaviour:
   - {fileID: 3912709827525739621, guid: 53e8fabd5d605e341b9ebe71ad7b59a7, type: 3}
   - {fileID: 8749872196358698727, guid: 39d27d6a6dc472b49a3ef1dfc74f4b10, type: 3}
   m_Origin: {fileID: 561019921}
-  m_BulletSpeed: 100
+  m_BulletSpeed: 10
+  m_Damage: 5
   m_CurrentReloadTimer: 0
+--- !u!114 &1121833233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912898314851986171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d717a2b6351a7d14ab1e22da20a9a077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 25

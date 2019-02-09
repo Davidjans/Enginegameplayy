@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2792109698741431044}
   - component: {fileID: 3105842046009465198}
   - component: {fileID: 8232497445048700487}
-  m_Layer: 0
+  - component: {fileID: 1651181984}
+  m_Layer: 11
   m_Name: RedLazer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,3 +129,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1651181984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749872196358698727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd323810d47897142b15570e0f5b29d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 5

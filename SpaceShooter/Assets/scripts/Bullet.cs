@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,15 +17,18 @@ public class Bullet : MonoBehaviour
         
     }
 
-	private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (other.CompareTag("Enemy"))
+		if (collision.CompareTag("Enemy"))
 		{
-			other.GetComponent<Enemy>().TakeDamage(m_Damage);
+			Debug.Log("enemy been hit");
+			collision.GetComponent<Enemy>().TakeDamage(m_Damage);
+			Destroy(gameObject);
 		}
-		if (other.CompareTag("Player"))
+		if (collision.CompareTag("Player"))
 		{
-			other.GetComponent<Player>().TakeDamage(m_Damage);
+			collision.GetComponent<Player>().TakeDamage(m_Damage);
+			Destroy(gameObject);
 		}
 	}
 }

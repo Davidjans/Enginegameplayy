@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 		m_PlayerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
 		m_MatchManager = GameObject.Find("MatchManager").GetComponent<MatchManager>();
 		m_MaxHealth = m_MaxHealth * m_PlayerManager.m_Difficulty;
+		m_Health = m_MaxHealth;
 		m_Damage = m_Damage * m_PlayerManager.m_Difficulty;
 	}
 
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
 		m_Health -= damage;
 		if(m_Health <= 0)
 		{
+			m_MatchManager.m_EnemyAmmount--;
 			m_PlayerManager.RecieveCredits(Random.Range(10, 25));
 			
 			Destroy(gameObject);
