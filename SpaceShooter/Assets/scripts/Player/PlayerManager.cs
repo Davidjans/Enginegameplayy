@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
 	public int m_Credits;
 	public int m_PlayerID;
 	public int m_Difficulty;
+	// 0 = attackspeed, 1 = DamageLevel, 2 = armorlevel, 3 = speedlevel, 4 = healthlevel
 	public List<int> m_UpgradeLevels;
 
 

@@ -36,19 +36,19 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			m_RigidBody.AddForce(new Vector2(0, m_Speed));
+			m_RigidBody.AddForce(new Vector2(0, m_Speed * Time.deltaTime));
 		}
 		else if (Input.GetKey(KeyCode.S))
 		{
-			m_RigidBody.AddForce(new Vector2(0, -m_Speed));
+			m_RigidBody.AddForce(new Vector2(0, -m_Speed * Time.deltaTime));
 		}
 		if (Input.GetKey(KeyCode.A))
 		{
-			m_RigidBody.AddForce(new Vector2(-m_Speed, 0));
+			m_RigidBody.AddForce(new Vector2(-m_Speed * Time.deltaTime, 0));
 		}
 		else if (Input.GetKey(KeyCode.D))
 		{
-			m_RigidBody.AddForce(new Vector2(m_Speed, 0));
+			m_RigidBody.AddForce(new Vector2(m_Speed * Time.deltaTime, 0));
 		}
 		m_RigidBody.velocity = new Vector3(Mathf.Clamp(m_RigidBody.velocity.x, m_MinVelocity, m_MaxVelocity), Mathf.Clamp(m_RigidBody.velocity.y, m_MinVelocity, m_MaxVelocity), 0);
 	}
@@ -97,9 +97,9 @@ public class PlayerMovement : MonoBehaviour
 
 	public void FaceMouse()
 	{
-		// mouseposition = Input.mousePosition;
+		Vector3 mouseposition = Input.mousePosition;
 		//Debug.Log(mouseposition);
-		Vector3 mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		mouseposition = Camera.main.ScreenToWorldPoint(new Vector3(mouseposition.x,mouseposition.y, 10));
 		
 
 		Vector2 direction = new Vector2(mouseposition.x - transform.position.x, mouseposition.y - transform.position.y);
