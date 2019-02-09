@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
 		{
 			Player player = collision.gameObject.GetComponent<Player>();
 			player.TakeDamage(5 * GameObject.Find("PlayerManager").GetComponent<PlayerManager>().m_Difficulty);
-			Destroy(gameObject);
+			GetComponent<Enemy>().TakeDamage(99999);
 		}
 	}
 }
